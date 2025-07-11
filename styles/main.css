@@ -254,6 +254,30 @@ nav a.active {
     border-bottom: 1px solid var(--text-color);
 }
 
+/* --- Coming Soon Section --- */
+.coming-soon {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.coming-soon h3 {
+    font-family: var(--font-hero);
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.coming-soon p {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+}
+
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .container {

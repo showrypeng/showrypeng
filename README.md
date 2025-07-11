@@ -13,7 +13,6 @@ A clean, static photo gallery website.
 ## Structure
 
 ```
-my_cv_web/
 ├── assets/          # Image files
 ├── styles/          # CSS and JavaScript files
 ├── gallery.html     # Main gallery page
@@ -24,17 +23,12 @@ my_cv_web/
 
 ## Local Development
 
-1. Navigate to the project directory:
-   ```bash
-   cd my_cv_web
-   ```
-
-2. Start a local HTTP server:
+1. Start a local HTTP server:
    ```bash
    python3 -m http.server 8000
    ```
 
-3. Open your browser to:
+2. Open your browser to:
    ```
    http://localhost:8000
    ```
