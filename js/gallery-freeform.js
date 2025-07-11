@@ -20,19 +20,8 @@ class FreeformGallery {
                 this.items.push(item);
              });
         } else {
-            // Default images if canvas is empty
-            const defaultImages = [
-                'assets/jpn_snow_scene.jpeg', 'assets/tw_white_house.jpeg', 
-                'assets/jpn_train_color.jpeg', 'assets/phil_cat_overlook.jpeg', 'assets/raindrops_macro.jpeg', 
-                'assets/tw_hualien_film.jpeg', 'assets/mt_fuji_view.jpeg', 'assets/jpn_park_bw.jpeg',
-                'assets/jpn_birds_bw.jpeg', 'assets/shoes_artistic.jpeg', 'assets/jpn_train_bw.jpeg',
-                'assets/phil_seascape.jpeg'
-            ];
-            defaultImages.forEach(src => {
-                const item = this.createItem(src);
-                this.canvas.appendChild(item);
-                this.items.push(item);
-            });
+            // Load secure images from API
+            this.loadSecureImages();
         }
         
         // Wait until all images have loaded before laying out
@@ -71,6 +60,49 @@ class FreeformGallery {
                 this.applyCleanLayout(this.items, canvasWidth, canvasHeight);
             }
         }, 5000); // 5 second timeout
+    }
+
+    loadSecureImages() {
+        // Show loading message
+        this.canvas.innerHTML = '<div style="text-align: center; padding: 2rem; color: #666;">Loading images...</div>';
+        
+        // Static list of gallery images
+        const staticImages = [
+            'jpn_birds_bw.jpeg',
+            'jpn_park_bw.jpeg', 
+            'jpn_snow_scene.jpeg',
+            'jpn_train_bw.jpeg',
+            'jpn_train_color.jpeg',
+            'mt_fuji_landscape.jpeg',
+            'mt_fuji_view.jpeg',
+            'phil_cat_overlook.jpeg',
+            'phil_seascape.jpeg',
+            'raindrops_macro.jpeg',
+            'shoes_artistic.jpeg',
+            'tw_hualien_film.jpeg',
+            'tw_white_house.jpeg'
+        ];
+        
+        // Clear loading message
+        this.canvas.innerHTML = '';
+        
+        // Create gallery items with static asset paths
+        staticImages.forEach((filename) => {
+            const url = `assets/${filename}`;
+            const item = this.createItem(url);
+            item.dataset.filename = filename; // Store original filename
+            this.canvas.appendChild(item);
+            this.items.push(item);
+        });
+        
+        // Apply layout after all images are created
+        if (this.items.length > 0) {
+            setTimeout(() => {
+                const canvasWidth = Math.max(1400, this.canvas.offsetWidth);
+                const canvasHeight = Math.max(1200, this.canvas.offsetHeight);
+                this.applyCleanLayout(this.items, canvasWidth, canvasHeight);
+            }, 100);
+        }
     }
 
     setupStyles() {

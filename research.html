@@ -5,160 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Research & Everything - Xiaoyi Peng</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/research.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Roboto:wght@400&family=Inter:wght@400;900&family=Noto+Serif+SC:wght@400;600&family=Noto+Sans+SC:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        .research-container {
-            display: flex;
-            gap: 3rem;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        
-        .research-sidebar {
-            flex: 0 0 250px;
-            position: sticky;
-            top: 120px;
-            height: fit-content;
-        }
-        
-        .research-nav {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            padding: 1.2rem;
-        }
-        
-        .research-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .research-nav li {
-            margin-bottom: 0.6rem;
-        }
-        
-        .research-nav li:last-child {
-            margin-bottom: 0;
-        }
-        
-        .research-nav a {
-            color: #555;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            display: block;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .research-nav a:hover,
-        .research-nav a.active {
-            color: var(--text-color);
-            border-bottom-color: var(--text-color);
-        }
-        
-        .research-content {
-            flex: 1;
-            padding-left: 2rem;
-        }
-        
-        .research-section {
-            margin-bottom: 4rem;
-        }
-        
-        .research-section h2 {
-            font-family: var(--font-hero);
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #000;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 1rem;
-        }
-        
-        .research-section h3 {
-            font-family: var(--font-serif);
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #333;
-            margin: 2rem 0 1rem 0;
-        }
-        
-
-        
-        .publication-list {
-            margin-top: 1.5rem;
-        }
-        
-        .publication-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #e8e8e8;
-        }
-        
-        .publication-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        .publication-item p {
-            font-family: var(--font-serif);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            font-size: 1rem;
-        }
-        
-        .publication-item p em {
-            color: #666;
-            font-style: italic;
-        }
-        
-        .publication-item a {
-            color: var(--text-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--text-color);
-        }
-        
-        .publication-item a:hover {
-            opacity: 0.7;
-        }
-        
-
-        
-        @media (max-width: 900px) {
-            .research-container {
-                flex-direction: column;
-                gap: 2rem;
-                padding: 1.5rem;
-            }
-            
-            .research-sidebar {
-                position: static;
-                flex: none;
-            }
-            
-            .research-content {
-                padding-left: 0;
-            }
-            
-            .research-section h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <header class="main-header">
         <div class="header-container">
             <div class="logo">X.P.</div>
             <nav>
-                <a href="home.html">Home</a>
+                <a href="index.html">Home</a>
                 <a href="research.html" class="active">Research & Everything</a>
                 <a href="gallery.html">Gallery</a>
             </nav>
@@ -235,59 +93,6 @@
         </div>
     </footer>
     
-    <script>
-        // Smooth scrolling and active nav highlighting
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('.research-section');
-            
-            // Handle nav link clicks
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        // Calculate offset to account for sticky header
-                        const headerHeight = document.querySelector('.main-header').offsetHeight;
-                        const offsetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-                        
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
-                    
-                    // Update active state
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-            
-            // Update active nav on scroll
-            window.addEventListener('scroll', function() {
-                let current = '';
-                const headerHeight = document.querySelector('.main-header').offsetHeight;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const sectionBottom = section.getBoundingClientRect().bottom;
-                    
-                    // Check if section is in view (accounting for header)
-                    if (sectionTop <= headerHeight + 50 && sectionBottom > headerHeight + 50) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + current) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/research.js"></script>
 </body>
 </html> 

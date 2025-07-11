@@ -1,11 +1,19 @@
 # Block all crawlers from indexing images
 User-agent: *
+Disallow: /assets/
 Disallow: /*.jpg$
 Disallow: /*.jpeg$
 Disallow: /*.png$
 Disallow: /*.gif$
 Disallow: /*.webp$
 
-# Allow all other content
+# Specifically block image crawlers
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /assets/
+
+# Allow other content
 User-agent: *
 Allow: / 

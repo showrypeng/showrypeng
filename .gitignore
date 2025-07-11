@@ -78,6 +78,10 @@ Icon?
 config/secrets.json
 secrets/
 
+# Private files and images
+private/
+**/personal_photos/
+
 # Build artifacts
 dist/
 build/

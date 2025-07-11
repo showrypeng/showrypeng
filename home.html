@@ -29,7 +29,9 @@
     </section>
     <div class="container homepage-container">
         <aside class="image-column">
-            <img src="assets/mt_fuji_landscape.jpeg" alt="Mount Fuji landscape" loading="lazy">
+            <div id="hero-image-container">
+                <div class="hero-image-placeholder">Loading image...</div>
+            </div>
         </aside>
         <main class="content-column">
             <section class="bio-section">
@@ -61,5 +63,15 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Load hero image from static assets
+        function loadHeroImage() {
+            const container = document.getElementById('hero-image-container');
+            container.innerHTML = `<img src="assets/mt_fuji_landscape.jpeg" alt="Mount Fuji landscape" loading="lazy">`;
+        }
+        
+        // Load the image when the page loads
+        document.addEventListener('DOMContentLoaded', loadHeroImage);
+    </script>
 </body>
 </html> 

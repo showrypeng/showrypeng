@@ -107,11 +107,25 @@ nav a.active {
     flex: 1;
     max-width: 50%;
 }
-.image-column img {
+#hero-image-container {
+    width: 100%;
+    min-height: 300px; /* Example min-height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hero-image-container img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* Show full image without cropping */
-    loading: lazy; /* Improve loading performance */
+    display: block;
+}
+.hero-image-placeholder {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+}
+.hero-image-placeholder.error {
+    color: #999;
 }
 .content-column {
     flex: 1;
