@@ -1,4 +1,4 @@
-# Xiaoyi (Showry) Peng - Portfolio
+# Showry Peng - Portfolio
 
 A personal portfolio website showcasing photography and professional work.
 
