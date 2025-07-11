@@ -2,30 +2,22 @@
 
 ## 📁 Organized File Structure
 
-All images now follow a consistent naming convention: `location_subject_description.jpeg`
+All images follow a consistent naming convention: `prefix_identifier.jpeg`
 
-### 🇯🇵 Japan Images
-- `jpn_snow_scene.jpeg` - Winter snow landscape scene
-- `jpn_train_color.jpeg` - Colorful train station scene  
-- `jpn_train_bw.jpeg` - Black & white train scene
-- `jpn_park_bw.jpeg` - Black & white park scene
-- `jpn_birds_bw.jpeg` - Black & white birds scene
-
-### 🏔️ Mount Fuji Images
-- `mt_fuji_landscape.jpeg` - Wide landscape view of Mount Fuji
-- `mt_fuji_view.jpeg` - Another scenic view of Mount Fuji
-
-### 🇵🇭 Philippines Images  
-- `phil_cat_overlook.jpeg` - Cat overlooking scenic view
-- `phil_seascape.jpeg` - Ocean/seascape view
-
-### 🇹🇼 Taiwan Images
-- `tw_white_house.jpeg` - White house architecture
-- `tw_hualien_film.jpeg` - Film-style photo from Hualien
-
-### 🎨 Artistic/Abstract Images
-- `raindrops_macro.jpeg` - Macro photography of raindrops
-- `shoes_artistic.jpeg` - Artistic shoe photography
+### File List
+- `jpn_snow_scene.jpeg`
+- `jpn_train_color.jpeg`
+- `jpn_train_bw.jpeg`
+- `jpn_park_bw.jpeg`
+- `jpn_birds_bw.jpeg`
+- `mt_fuji_landscape.jpeg`
+- `mt_fuji_view.jpeg`
+- `phil_cat_overlook.jpeg`
+- `phil_seascape.jpeg`
+- `tw_white_house.jpeg`
+- `tw_hualien_film.jpeg`
+- `raindrops_macro.jpeg`
+- `shoes_artistic.jpeg`
 
 ## 📊 File Sizes (All under 1MB)
 - Total: 13 images
@@ -43,7 +35,7 @@ All images now follow a consistent naming convention: `location_subject_descript
 
 ## 🔄 Changes Made
 1. Removed duplicate versions (kept best quality)
-2. Standardized naming: `location_subject_description.jpeg`
+2. Standardized naming convention
 3. Updated gallery JavaScript to use new names
 4. Created backup of original files
 5. Maintained all original image quality and dimensions

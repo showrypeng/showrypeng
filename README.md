@@ -1,22 +1,22 @@
-# My Web Photo Gallery
+# Web Photo Gallery
 
-A clean, static photo gallery website featuring a collection of photographs from Japan, Taiwan, and Philippines.
+A clean, static photo gallery website.
 
 ## Features
 
 - **Static Gallery Layout**: Clean, non-interactive design with sharp corners
 - **Smart Image Organization**: 2-3 images per row with equal-width distribution
-- **Featured Seascape**: Phil seascape image gets full-width treatment and appears in random position
+- **Featured Image**: One image gets full-width treatment and appears in random position
 - **Responsive Design**: Optimized for different screen sizes
-- **Fast Loading**: Optimized images (all under 300KB)
+- **Fast Loading**: Optimized images
 
 ## Structure
 
 ```
 my_cv_web/
-├── assets/          # Photo collection
+├── assets/          # Image files
 ├── styles/          # CSS and JavaScript files
-├── gallery.html     # Main photo gallery
+├── gallery.html     # Main gallery page
 ├── home.html        # Homepage
 ├── research.html    # Research page
 └── index.html       # Entry point
@@ -41,8 +41,8 @@ my_cv_web/
 
 ## Gallery Features
 
-- **Phil Seascape**: Featured image with full-width display, positioned randomly
-- **Image Collection**: Curated photos from various locations
+- **Featured Image**: One image with full-width display, positioned randomly
+- **Image Collection**: Collection of images
 - **Static Layout**: No drag-and-drop or editing functionality
 - **Clean Design**: Minimal styling with focus on content
 
@@ -59,4 +59,4 @@ my_cv_web/
 
 ## License
 
-Personal photo collection. All rights reserved. 
+Personal collection. All rights reserved. 

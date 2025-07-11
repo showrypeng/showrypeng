@@ -1,8 +1,8 @@
-This directory is for your website's images.
+This directory contains website images.
 
 When adding images, remember to:
-1.  **Compress them**: Use a tool like TinyPNG or ImageOptim.
-2.  **Use modern formats**: Convert images to WebP for smaller file sizes.
-3.  **Name them descriptively**: For example, `new-york-skyline.jpg` instead of `IMG_1234.jpg`.
+1.  **Compress them**: Use optimization tools.
+2.  **Use modern formats**: Convert to WebP for smaller file sizes.
+3.  **Name them consistently**: Use descriptive naming conventions.
 
-This will help keep your website fast and SEO-friendly. 
+This will help keep your website optimized. 
