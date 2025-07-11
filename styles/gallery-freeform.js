@@ -228,21 +228,9 @@ class FreeformGallery {
     smartOrientationLayout(items, margin, canvasWidth) {
         // Shuffle items for creativity, but handle phil_seascape specially
         let allItems = [...items];
-        let seascapeItem = null;
-        let otherItems = [];
-        
-        // Separate phil_seascape from other items
-        allItems.forEach(item => {
-            const img = item.querySelector('img');
-            if (img && img.src.includes('phil_seascape')) {
-                seascapeItem = item;
-            } else {
-                otherItems.push(item);
-            }
-        });
-        
-        // Shuffle other items
-        otherItems = otherItems.sort(() => Math.random() - 0.5);
+        // Treat all items equally – no special full-width row for phil_seascape
+        let otherItems = [...allItems].sort(() => Math.random() - 0.5);
+        let seascapeItem = null; // No item singled out
         
         let currentY = margin;
         
