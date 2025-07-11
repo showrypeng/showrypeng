@@ -86,7 +86,7 @@ class FreeformGallery {
                     border-radius: 0;
                     min-height: 1200px; /* Increased height for vertical images */
                     width: 100%;
-                    overflow: hidden;
+                    overflow: visible; /* Allow images to overflow if needed */
                     margin: 30px 0; /* Increased margin */
                     padding: 20px; /* Added padding for breathing room */
                 }
@@ -112,7 +112,7 @@ class FreeformGallery {
 
                 .gallery-item-free img {
                     width: 100%;
-                    height: 100%;
+                    height: 100%; /* Fill container */
                     object-fit: contain; /* Show full image without cropping */
                     display: block;
                     pointer-events: none;
