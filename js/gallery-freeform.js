@@ -73,7 +73,6 @@ class FreeformGallery {
             'jpn_snow_scene.jpeg',
             'jpn_train_bw.jpeg',
             'jpn_train_color.jpeg',
-            'mt_fuji_landscape.jpeg',
             'mt_fuji_view.jpeg',
             'phil_cat_overlook.jpeg',
             'phil_seascape.jpeg',

@@ -1,0 +1,36 @@
+/*
+  # Security Headers for GitHub Pages
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), fullscreen=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=(), midi=(), picture-in-picture=(), sync-xhr=(), web-share=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  
+/assets/*
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+  
+/*.jpg
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+/*.jpeg
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+/*.png
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+/*.gif
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+/*.webp
+  X-Robots-Tag: noindex, nofollow, nosnippet, noarchive, noimageindex
+  Cache-Control: no-cache, no-store, must-revalidate 

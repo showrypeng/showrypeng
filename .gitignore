@@ -113,4 +113,86 @@ venv/
 ENV/
 
 # Local development
-.local/ 
+.local/
+
+# Additional Security Protection
+# Never commit these sensitive files to GitHub
+wp-config.php
+config.php
+database.php
+credentials.json
+auth.json
+*.token
+*.secret
+.htpasswd
+private.key
+server.key
+ssl.key
+*.crt
+*.csr
+*.jks
+*.keystore
+app.config
+application.config
+web.config
+.config
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+*.accdb
+*.sql
+*.dump
+
+# AI Training Protection
+# Block files that might be used for AI training
+original_images/
+high_res/
+source_images/
+raw_photos/
+training_data/
+dataset/
+*.tiff
+*.raw
+*.cr2
+*.nef
+*.arw
+*.dng
+
+# Developer tools and temporary files
+.env.*
+.local
+.vscode-test
+.history/
+.metadata/
+.recommenders/
+.settings/
+.project
+.classpath
+.factorypath
+.buildpath
+.cache-main
+.scala_dependencies
+.worksheet
+nbproject/
+.nb-gradle/
+.gradle/
+.springBeans
+.sts4-cache/
+.apt_generated/
+.apt_generated_test/
+
+# Personal and sensitive content
+personal/
+sensitive/
+confidential/
+drafts/
+notes/
+todo.txt
+passwords.txt
+secrets.txt
+api_keys.txt
+development_notes.md
+server_credentials.txt 
