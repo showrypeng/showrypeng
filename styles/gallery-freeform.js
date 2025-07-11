@@ -40,8 +40,8 @@ class FreeformGallery {
         const tryLayout = () => {
             loadedCount++;
             if (loadedCount === this.items.length) {
-                const canvasWidth = Math.max(1200, this.canvas.offsetWidth);
-                const canvasHeight = Math.max(1000, this.canvas.offsetHeight);
+                const canvasWidth = Math.max(1400, this.canvas.offsetWidth); // Increased width for better spacing
+                const canvasHeight = Math.max(1200, this.canvas.offsetHeight); // Increased height for vertical images
                 this.applyCleanLayout(this.items, canvasWidth, canvasHeight);
             }
         };
@@ -84,10 +84,11 @@ class FreeformGallery {
                     background: none; /* Removed background */
                     border: none; /* Removed border */
                     border-radius: 0;
-                    min-height: 1000px;
+                    min-height: 1200px; /* Increased height for vertical images */
                     width: 100%;
                     overflow: hidden;
-                    margin: 20px 0;
+                    margin: 30px 0; /* Increased margin */
+                    padding: 20px; /* Added padding for breathing room */
                 }
 
                 .gallery-canvas.show-grid {
@@ -102,10 +103,11 @@ class FreeformGallery {
                     cursor: default; /* Changed from move to default */
                     border: none; /* Removed border */
                     border-radius: 0;
-                    overflow: hidden;
+                    overflow: visible; /* Changed to visible to prevent cropping */
                     transition: none; /* Removed transition */
                     background: none; /* Removed background */
                     box-shadow: none; /* Removed shadow */
+                    margin: 10px; /* Added margin around each image */
                 }
 
                 .gallery-item-free img {
@@ -218,7 +220,7 @@ class FreeformGallery {
     }
 
     applyCleanLayout(items, canvasWidth, canvasHeight) {
-        const margin = 20; // gap between items and rows
+        const margin = 60; // Increased gap between items and rows for better spacing, especially for vertical photos
         this.smartOrientationLayout(items, margin, canvasWidth);
         this.updateCanvasSize();
     }
@@ -280,7 +282,8 @@ class FreeformGallery {
                 } else if (remaining === 2) {
                     itemsInRow = 2;
                 } else {
-                    itemsInRow = Math.random() < 0.6 ? 3 : 2;
+                    // Prefer 2 items per row to give more space for vertical images
+                    itemsInRow = Math.random() < 0.3 ? 3 : 2;
                 }
                 
                 const rowItems = otherItems.slice(i, i + itemsInRow);
@@ -301,39 +304,45 @@ class FreeformGallery {
     }
     
     layoutEqualRow(rowItems, startY, margin, canvasWidth) {
-        // Layout items equally in a row
-        const availableWidth = canvasWidth - margin * (rowItems.length + 1);
-        const itemWidth = availableWidth / rowItems.length;
+        // Layout items in a row with proper spacing for vertical images
+        const totalMargin = margin * (rowItems.length + 1);
+        const availableWidth = canvasWidth - totalMargin;
         
         let maxHeight = 0;
         let currentX = margin;
         
-        // First pass: calculate dimensions and find max height
+        // Calculate proper widths that maintain aspect ratios
         const itemData = rowItems.map(item => {
             const size = this.getOriginalImageSize(item);
-            const scaleFactor = itemWidth / size.width;
-            const newWidth = itemWidth;
-            const newHeight = size.height * scaleFactor;
+            const aspectRatio = size.width / size.height;
+            
+            // For vertical images (aspect ratio < 1), give them less width but more height space
+            let targetWidth;
+            if (aspectRatio < 0.8) { // Vertical images
+                targetWidth = Math.min(availableWidth / rowItems.length * 0.7, 250); // Less width for verticals
+            } else if (aspectRatio > 1.3) { // Horizontal images  
+                targetWidth = Math.min(availableWidth / rowItems.length * 1.2, 400); // More width for horizontals
+            } else { // Square-ish images
+                targetWidth = availableWidth / rowItems.length;
+            }
+            
+            const newHeight = targetWidth / aspectRatio;
             maxHeight = Math.max(maxHeight, newHeight);
             
-            return { item, newWidth, newHeight };
+            return { item, newWidth: targetWidth, newHeight };
         });
         
-        // Second pass: apply positions with slight height adjustment for alignment
+        // Apply positions with proper spacing
         itemData.forEach(({ item, newWidth, newHeight }) => {
-            // Very slight height adjustment (max 3% difference) for better alignment
-            const heightDiff = maxHeight - newHeight;
-            const adjustedHeight = heightDiff < newHeight * 0.03 ? maxHeight : newHeight;
-            
             item.style.width = `${newWidth}px`;
-            item.style.height = `${adjustedHeight}px`;
+            item.style.height = `${newHeight}px`;
             item.style.left = `${currentX}px`;
             item.style.top = `${startY}px`;
             
             currentX += newWidth + margin;
         });
         
-        return startY + maxHeight + margin;
+        return startY + maxHeight + margin * 1.5; // Extra vertical spacing
     }
 
     layoutFullWidthRow(rowItems, startY, margin, canvasWidth) {

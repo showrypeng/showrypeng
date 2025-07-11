@@ -162,13 +162,14 @@ nav a.active {
 }
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 4rem;
-    padding: 3rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5rem; /* Increased gap for better spacing */
+    padding: 4rem 0; /* Increased padding */
 }
 .gallery-item {
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Changed to visible to prevent cropping */
+    margin: 20px; /* Added margin around each gallery item */
 }
 .gallery-item img {
     width: 100%;
