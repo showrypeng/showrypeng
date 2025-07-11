@@ -227,15 +227,28 @@ nav a.active {
     padding: 2rem 4rem;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center; /* Vertically center content */
 }
-.footer-content {
-    flex: 1;
+
+.footer-social-links {
+    display: flex;
+    gap: 1.5rem; /* Space between icons */
 }
+
+.footer-social-links a {
+    color: var(--text-color);
+    font-size: 1.5rem; /* Icon size */
+    transition: opacity 0.3s;
+}
+
+.footer-social-links a:hover {
+    opacity: 0.7; /* Hover effect */
+}
+
 .footer-copyright {
-    flex: 1;
     text-align: right;
 }
+
 .footer-copyright p {
     margin: 0;
     color: #888;
@@ -283,7 +296,7 @@ nav a.active {
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .container {
-        padding: 2rem;
+        padding: 1.5rem 2rem;
     }
     .hero-content h1 {
         font-size: 2.5rem;
@@ -303,12 +316,13 @@ nav a.active {
         flex-direction: column;
         align-items: flex-start;
         gap: 1.5rem;
-        padding: 2rem;
+        padding: 1.5rem 2rem;
     }
     .footer-copyright {
         text-align: left;
+        margin-top: 1rem;
     }
     nav {
-        margin-left: -2rem; /* Align with left edge */
+        display: none; /* Example for mobile */
     }
 } 
