@@ -111,6 +111,8 @@ class FreeformGallery {
                 .gallery-item-free img {
                     width: 100%;
                     height: 100%;
+                    max-width: 350px; /* Limit image width */
+                    max-height: 250px; /* Limit image height */
                     object-fit: cover;
                     display: block;
                     pointer-events: none;
@@ -441,7 +443,7 @@ class FreeformGallery {
 
     getOriginalImageSize(item) {
         const img = item.querySelector('img');
-        if (!img) return { width: 200, height: 150 };
+        if (!img) return { width: 160, height: 120 };
         
         // Create a temporary image to get original dimensions
         const tempImg = new Image();
@@ -450,8 +452,8 @@ class FreeformGallery {
         // If image is already loaded, use natural dimensions
         if (tempImg.complete) {
             const aspectRatio = tempImg.naturalWidth / tempImg.naturalHeight;
-            // Scale to a reasonable size while maintaining aspect ratio
-            const baseWidth = 200 + Math.random() * 150; // 200-350px width
+            // Scale to a smaller reasonable size while maintaining aspect ratio
+            const baseWidth = 160 + Math.random() * 100; // Reduced to 160-260px width
             return {
                 width: Math.round(baseWidth),
                 height: Math.round(baseWidth / aspectRatio)
@@ -459,11 +461,11 @@ class FreeformGallery {
         }
         
         // Fallback: use current dimensions or estimate
-        const currentWidth = item.offsetWidth || 200;
-        const currentHeight = item.offsetHeight || 150;
+        const currentWidth = item.offsetWidth || 160;
+        const currentHeight = item.offsetHeight || 120;
         const aspectRatio = currentWidth / currentHeight;
         
-        const baseWidth = 200 + Math.random() * 150;
+        const baseWidth = 160 + Math.random() * 100; // Reduced to 160-260px width
         return {
             width: Math.round(baseWidth),
             height: Math.round(baseWidth / aspectRatio)
@@ -530,18 +532,15 @@ class FreeformGallery {
         return positions;
     }
 
-    createItem(src, left = 0, top = 0, width = 200, height = 150) {
+    createItem(src, left = 0, top = 0, width = 180, height = 135) { /* Reduced from 200x150 to 180x135 */
         const item = document.createElement('div');
         item.className = 'gallery-item-free';
-        item.style.left = left + 'px';
-        item.style.top = top + 'px';
-        item.style.width = width + 'px';
-        item.style.height = height + 'px';
         
         const img = document.createElement('img');
         img.src = src;
         img.alt = 'Gallery image';
         img.draggable = false;
+        img.loading = 'lazy'; // Add lazy loading for better performance
         
         item.appendChild(img);
         

@@ -110,7 +110,9 @@ nav a.active {
 .image-column img {
     width: 100%;
     height: auto;
+    max-height: 600px; /* Limit the maximum height */
     object-fit: cover;
+    loading: lazy; /* Improve loading performance */
 }
 .content-column {
     flex: 1;
@@ -172,6 +174,8 @@ nav a.active {
 .gallery-item img {
     width: 100%;
     height: auto;
+    max-width: 400px; /* Limit gallery image width */
+    max-height: 300px; /* Limit gallery image height */
     display: block;
     transition: transform 0.3s ease-out;
     object-fit: cover;
