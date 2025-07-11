@@ -111,9 +111,7 @@ class FreeformGallery {
                 .gallery-item-free img {
                     width: 100%;
                     height: 100%;
-                    max-width: 350px; /* Limit image width */
-                    max-height: 250px; /* Limit image height */
-                    object-fit: cover;
+                    object-fit: contain; /* Show full image without cropping */
                     display: block;
                     pointer-events: none;
                 }

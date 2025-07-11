@@ -110,8 +110,7 @@ nav a.active {
 .image-column img {
     width: 100%;
     height: auto;
-    max-height: 600px; /* Limit the maximum height */
-    object-fit: cover;
+    object-fit: contain; /* Show full image without cropping */
     loading: lazy; /* Improve loading performance */
 }
 .content-column {
@@ -174,11 +173,9 @@ nav a.active {
 .gallery-item img {
     width: 100%;
     height: auto;
-    max-width: 400px; /* Limit gallery image width */
-    max-height: 300px; /* Limit gallery image height */
     display: block;
     transition: transform 0.3s ease-out;
-    object-fit: cover;
+    object-fit: contain; /* Show full image without cropping */
 }
 .gallery-item img:hover {
     transform: scale(1.02);
