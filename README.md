@@ -1,56 +1,18 @@
-# Web Photo Gallery
+# Xiaoyi (Showry) Peng - Portfolio
 
-A clean, static photo gallery website.
+A personal portfolio website showcasing photography and professional work.
 
 ## Features
 
-- **Static Gallery Layout**: Clean, non-interactive design with sharp corners
-- **Smart Image Organization**: 2-3 images per row with equal-width distribution
-- **Featured Image**: One image gets full-width treatment and appears in random position
-- **Responsive Design**: Optimized for different screen sizes
-- **Fast Loading**: Optimized images
-
-## Structure
-
-```
-├── assets/          # Image files
-├── styles/          # CSS and JavaScript files
-├── gallery.html     # Main gallery page
-├── home.html        # Homepage
-├── research.html    # Research page
-└── index.html       # Entry point
-```
+- Photo gallery with responsive design
+- Contact information and social links
+- Clean, minimal interface
 
 ## Local Development
 
-1. Start a local HTTP server:
-   ```bash
-   python3 -m http.server 8000
-   ```
+Start a local server:
+```bash
+python3 -m http.server 8000
+```
 
-2. Open your browser to:
-   ```
-   http://localhost:8000
-   ```
-
-## Gallery Features
-
-- **Featured Image**: One image with full-width display, positioned randomly
-- **Image Collection**: Collection of images
-- **Static Layout**: No drag-and-drop or editing functionality
-- **Clean Design**: Minimal styling with focus on content
-
-## Security
-
-- Comprehensive `.gitignore` for sensitive files
-- No server-side processing required
-- Static file hosting compatible
-
-## Browser Compatibility
-
-- Modern browsers with JavaScript enabled
-- Responsive design for mobile and desktop
-
-## License
-
-Personal collection. All rights reserved. 
+Then open `http://localhost:8000` in your browser. 
