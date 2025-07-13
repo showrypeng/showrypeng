@@ -71,14 +71,15 @@ class FreeformGallery {
             'jpn_birds_bw.jpeg',
             'jpn_park_bw.jpeg', 
             'jpn_snow_scene.jpeg',
+            'jpn_street_bw.jpeg',
             'jpn_train_bw.jpeg',
             'jpn_train_color.jpeg',
             'mt_fuji_view.jpeg',
+            'mt_fuji_landscape.jpeg',
             'phil_cat_overlook.jpeg',
             'phil_seascape.jpeg',
-            'raindrops_macro.jpeg',
+            'baby_goat.jpeg',
             'shoes_artistic.jpeg',
-            'tw_hualien_film.jpeg',
             'tw_white_house.jpeg'
         ];
         
