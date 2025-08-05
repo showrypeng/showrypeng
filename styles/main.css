@@ -30,12 +30,18 @@ body {
     margin: 0 auto;
 }
 
+/* Special container for homepage to allow full viewport */
 .homepage-container {
+    padding: 0 4rem; /* Keep horizontal padding but remove vertical */
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    gap: 4rem;
-    padding: 4rem 0;
-    align-items: center; /* Vertically center the columns */
+    gap: 4rem; /* Generous gap for clean separation */
+    align-items: flex-start; /* CRITICAL: Aligns items to the top */
+    min-height: 100vh; /* Ensure full viewport height */
 }
+
+/* This rule was moved above and updated */
 
 /* --- Header --- */
 .main-header {
@@ -75,87 +81,77 @@ nav a.active {
     border-bottom-color: var(--text-color);
 }
 
-/* --- Hero Section (Homepage) --- */
-.hero-section {
-    padding: 3rem 0 2rem 0; /* Reduced padding for minimalist approach */
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.hero-content h1 {
-    font-family: var(--font-hero);
-    font-size: 3rem; /* Slightly smaller for better balance */
-    font-weight: 700; /* Less bold for minimalist feel */
-    margin: 0 0 0.5rem 0;
-    letter-spacing: -0.02em; /* Tighter letter spacing */
-}
-.hero-content p {
-    font-family: var(--font-hero);
-    font-size: 0.9rem;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    margin: 0;
-    color: #666; /* Softer color */
-    font-weight: 400;
-}
+/* --- Homepage: Main Container --- */
+/* Moved above to consolidate with container styling */
 
-
-/* --- Homepage Content --- */
+/* --- Homepage: Content --- */
 .image-column {
-    flex: 0 0 40%; /* Slightly smaller for better balance */
-    max-width: 40%;
-}
-#hero-image-container {
-    width: 100%;
-    min-height: 300px; /* Reduced for cleaner proportions */
+    flex: 1; /* Takes up its natural space */
+    position: sticky; /* Keep image in view while scrolling */
+    top: 120px; /* Offset from the top */
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Align to top */
-    margin-top: 0.5rem; /* Small top margin for alignment */
+    align-items: center; /* Center image vertically */
+    min-height: calc(100vh - 120px); /* Account for header height */
 }
+
 #hero-image-container img {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 450px; /* Slightly reduced max height */
-    object-fit: cover;
-    border-radius: 4px; /* Subtle rounded corners for modern look */
+    /* No border-radius or shadows as requested */
 }
-.hero-image-placeholder {
-    padding: 2rem;
-    text-align: center;
-    color: #666;
-}
-.hero-image-placeholder.error {
-    color: #999;
-}
+
 .content-column {
-    flex: 1;
-    padding-top: 0; /* Remove top padding for better alignment */
-    padding-left: 2.5rem; /* Slightly increased for better spacing */
+    flex: 1.5; /* More space for text to breathe */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    min-height: 100vh; /* Full viewport height */
+    padding: 2rem 0; /* Add some padding for breathing room */
 }
+
+.hero-content h1 {
+    font-family: var(--font-hero);
+    font-size: 4rem; /* Larger for more impact */
+    font-weight: 700;
+    margin: 0 0 1.5rem 0; /* Increased bottom margin for more space */
+    letter-spacing: -0.03em;
+    color: #222; /* Darker for better contrast */
+}
+
+.hero-content p {
+    font-family: var(--font-hero);
+    font-size: 1rem; /* Slightly larger */
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin: 0 0 6rem 0; /* Much larger bottom margin for hero spacing */
+    color: #777;
+    font-weight: 500;
+}
+
 .bio-section p {
-    font-size: 1.1rem; /* Slightly smaller for better readability */
-    line-height: 1.7; /* Increased line height for better reading */
-    margin-bottom: 3rem; /* Reduced margin for tighter spacing */
-    color: #444; /* Slightly darker for better contrast */
-    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.8; /* More generous for readability */
+    margin-bottom: 3rem;
+    color: #444;
 }
-.education-section {
-    margin-top: 1rem; /* Add consistent top margin */
-}
+
 .education-section h3 {
-    font-size: 1.1rem; /* Smaller, more minimalist */
-    font-weight: 600;
-    margin-bottom: 1.5rem; /* Increased for better separation */
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     color: #333;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.05em; /* Wider for emphasis */
+    text-transform: uppercase;
 }
+
 .education-item {
-    margin-bottom: 1rem; /* Add space between education items */
+    margin-bottom: 1rem;
 }
+
 .education-item p {
     margin: 0;
-    font-size: 1rem; /* Consistent with minimalist approach */
+    font-size: 1rem;
     line-height: 1.6;
     color: #555;
 }
@@ -325,63 +321,35 @@ nav a.active {
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .container {
-        padding: 0 2rem; /* Consistent with desktop approach */
+        padding: 0 2rem;
     }
     .header-container {
-        padding: 1.5rem 2rem; /* Match container padding */
-    }
-    .hero-section {
-        padding: 2rem 0 1.5rem 0; /* Reduced for mobile */
-    }
-    .hero-content h1 {
-        font-size: 2.2rem; /* Slightly smaller than before */
-    }
-    .hero-content p {
-        font-size: 0.8rem;
-        letter-spacing: 0.1rem;
+        padding: 1.5rem 2rem;
     }
     .homepage-container {
         flex-direction: column;
-        gap: 2.5rem; /* Slightly larger gap for mobile separation */
-        padding: 1.5rem 0 3rem 0;
+        gap: 0; /* Remove gap for cleaner stacking */
+        padding: 2rem 0;
+        min-height: auto; /* Reset min-height for mobile */
     }
-
     .image-column {
-        flex: none;
-        max-width: 100%;
-        order: 2; /* Move image below content on mobile */
+        position: static; /* Remove sticky positioning on mobile */
+        margin-bottom: 2rem;
+        min-height: auto; /* Reset min-height for mobile */
     }
     .content-column {
-        padding-top: 0;
-        padding-left: 0;
-        order: 1; /* Content first on mobile */
+        flex: 1; /* Reset flex */
+        min-height: auto; /* Reset min-height for mobile */
+        justify-content: flex-start; /* Reset centering for mobile */
+    }
+    .hero-content h1 {
+        font-size: 3rem; /* Maintain larger size on mobile */
+    }
+    .hero-content p {
+        font-size: 0.8rem;
     }
     .bio-section p {
         font-size: 1.05rem;
-        margin-bottom: 2rem;
-    }
-    .footer-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        padding: 1.5rem 2rem;
-    }
-    .footer-copyright {
-        text-align: left;
-        margin-top: 1rem;
-    }
-    nav {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-        width: 100%;
-    }
-    nav a {
-        margin-left: 0;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-        padding: 0.5rem;
     }
 }
 
@@ -397,7 +365,7 @@ nav a.active {
         padding: 1.5rem 0 1rem 0;
     }
     .hero-content h1 {
-        font-size: 1.8rem; /* Further reduced for small screens */
+        font-size: 2.5rem; /* Maintain impact even on small screens */
     }
     .hero-content p {
         font-size: 0.75rem;
