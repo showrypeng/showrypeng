@@ -104,12 +104,12 @@ nav a.active {
 
 /* --- Homepage Content --- */
 .image-column {
-    flex: 1;
-    max-width: 50%;
+    flex: 0 0 45%; /* Fixed width for image column */
+    max-width: 45%;
 }
 #hero-image-container {
     width: 100%;
-    min-height: 300px; /* Example min-height */
+    min-height: 400px; /* Increased min-height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +118,8 @@ nav a.active {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 500px; /* Limit max height */
+    object-fit: cover; /* Better image fitting */
 }
 .hero-image-placeholder {
     padding: 2rem;
@@ -130,6 +132,7 @@ nav a.active {
 .content-column {
     flex: 1;
     padding-top: 1rem;
+    padding-left: 2rem; /* Add left padding for better spacing */
 }
 .bio-section p {
     font-size: 1.2rem;
@@ -321,10 +324,12 @@ nav a.active {
     }
 
     .image-column {
+        flex: none;
         max-width: 100%;
     }
     .content-column {
         padding-top: 0;
+        padding-left: 0; /* Remove left padding on mobile */
     }
     .header-container {
         flex-direction: column;
