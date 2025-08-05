@@ -32,9 +32,9 @@ body {
 
 .homepage-container {
     display: flex;
-    gap: 3rem; /* Reduced gap for tighter layout */
-    padding: 2rem 0 4rem 0; /* More controlled vertical spacing */
-    align-items: flex-start; /* Align to top for better organization */
+    gap: 4rem;
+    padding: 4rem 0;
+    align-items: center; /* Vertically center the columns */
 }
 
 /* --- Header --- */
