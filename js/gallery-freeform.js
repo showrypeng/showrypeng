@@ -74,9 +74,7 @@ class FreeformGallery {
             'jpn_street_bw.jpeg',
             'jpn_train_bw.jpeg',
             'jpn_train_color.jpeg',
-            'phil_cat_overlook.jpeg',
             'phil_seascape.jpeg',
-            'baby_goat.jpeg',
             'shoes_artistic.jpeg',
             'tw_white_house.jpeg'
         ];
