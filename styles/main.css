@@ -25,17 +25,16 @@ body {
 }
 
 .container {
-    padding: 2rem 4rem;
-    max-width: 1400px;
+    padding: 0 4rem; /* Remove vertical padding for better control */
+    max-width: 1200px; /* Slightly narrower for better readability */
     margin: 0 auto;
-    min-height: calc(100vh - 270px); /* Adjust based on header/footer height */
 }
 
 .homepage-container {
     display: flex;
-    gap: 4rem;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    gap: 3rem; /* Reduced gap for tighter layout */
+    padding: 2rem 0 4rem 0; /* More controlled vertical spacing */
+    align-items: flex-start; /* Align to top for better organization */
 }
 
 /* --- Header --- */
@@ -51,8 +50,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 2rem 4rem;
-    max-width: 1400px;
+    padding: 1.5rem 4rem; /* Reduced padding for minimalist header */
+    max-width: 1200px; /* Match container width */
     margin: 0 auto;
 }
 .logo {
@@ -78,48 +77,48 @@ nav a.active {
 
 /* --- Hero Section (Homepage) --- */
 .hero-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 3rem 0 2rem 0; /* Reduced padding for minimalist approach */
     text-align: center;
-    height: calc(100vh - 85px); /* Full height minus header */
-    color: #000;
+    margin-bottom: 2rem;
 }
 .hero-content h1 {
     font-family: var(--font-hero);
-    font-size: 4rem;
-    font-weight: 900;
-    margin: 0;
+    font-size: 3rem; /* Slightly smaller for better balance */
+    font-weight: 700; /* Less bold for minimalist feel */
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.02em; /* Tighter letter spacing */
 }
 .hero-content p {
     font-family: var(--font-hero);
-    font-size: 1rem;
-    letter-spacing: 0.2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
-    margin-top: 1rem;
-    color: #555;
+    margin: 0;
+    color: #666; /* Softer color */
+    font-weight: 400;
 }
 
 
 /* --- Homepage Content --- */
 .image-column {
-    flex: 0 0 45%; /* Fixed width for image column */
-    max-width: 45%;
+    flex: 0 0 40%; /* Slightly smaller for better balance */
+    max-width: 40%;
 }
 #hero-image-container {
     width: 100%;
-    min-height: 400px; /* Increased min-height */
+    min-height: 300px; /* Reduced for cleaner proportions */
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align to top */
+    margin-top: 0.5rem; /* Small top margin for alignment */
 }
 #hero-image-container img {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 500px; /* Limit max height */
-    object-fit: cover; /* Better image fitting */
+    max-height: 450px; /* Slightly reduced max height */
+    object-fit: cover;
+    border-radius: 4px; /* Subtle rounded corners for modern look */
 }
 .hero-image-placeholder {
     padding: 2rem;
@@ -131,21 +130,34 @@ nav a.active {
 }
 .content-column {
     flex: 1;
-    padding-top: 1rem;
-    padding-left: 2rem; /* Add left padding for better spacing */
+    padding-top: 0; /* Remove top padding for better alignment */
+    padding-left: 2.5rem; /* Slightly increased for better spacing */
 }
 .bio-section p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 4rem;
+    font-size: 1.1rem; /* Slightly smaller for better readability */
+    line-height: 1.7; /* Increased line height for better reading */
+    margin-bottom: 3rem; /* Reduced margin for tighter spacing */
+    color: #444; /* Slightly darker for better contrast */
+    font-weight: 400;
+}
+.education-section {
+    margin-top: 1rem; /* Add consistent top margin */
 }
 .education-section h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem; /* Smaller, more minimalist */
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem; /* Increased for better separation */
+    color: #333;
+    letter-spacing: 0.01em;
+}
+.education-item {
+    margin-bottom: 1rem; /* Add space between education items */
 }
 .education-item p {
-    margin: 0 0 0.5rem 0;
+    margin: 0;
+    font-size: 1rem; /* Consistent with minimalist approach */
+    line-height: 1.6;
+    color: #555;
 }
 
 /* --- Research & Gallery Pages --- */
@@ -313,29 +325,40 @@ nav a.active {
 /* --- Responsive --- */
 @media (max-width: 900px) {
     .container {
-        padding: 1.5rem 2rem;
+        padding: 0 2rem; /* Consistent with desktop approach */
+    }
+    .header-container {
+        padding: 1.5rem 2rem; /* Match container padding */
+    }
+    .hero-section {
+        padding: 2rem 0 1.5rem 0; /* Reduced for mobile */
     }
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem; /* Slightly smaller than before */
+    }
+    .hero-content p {
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
     }
     .homepage-container {
         flex-direction: column;
-        gap: 2rem;
+        gap: 2.5rem; /* Slightly larger gap for mobile separation */
+        padding: 1.5rem 0 3rem 0;
     }
 
     .image-column {
         flex: none;
         max-width: 100%;
+        order: 2; /* Move image below content on mobile */
     }
     .content-column {
         padding-top: 0;
-        padding-left: 0; /* Remove left padding on mobile */
+        padding-left: 0;
+        order: 1; /* Content first on mobile */
     }
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 1.5rem 2rem;
+    .bio-section p {
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
     }
     .footer-container {
         flex-direction: column;
@@ -365,20 +388,27 @@ nav a.active {
 /* --- Extra small screens --- */
 @media (max-width: 480px) {
     .header-container {
-        padding: 1rem 1rem;
+        padding: 1rem;
     }
     .container {
-        padding: 1rem 1rem;
+        padding: 0 1rem; /* Consistent with new approach */
+    }
+    .hero-section {
+        padding: 1.5rem 0 1rem 0;
     }
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Further reduced for small screens */
     }
     .hero-content p {
-        font-size: 0.9rem;
-        letter-spacing: 0.1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.08rem;
+    }
+    .homepage-container {
+        gap: 2rem;
+        padding: 1rem 0 2rem 0;
     }
     .bio-section p {
-        font-size: 1.1rem;
+        font-size: 1rem; /* Smaller for mobile readability */
     }
     nav a {
         font-size: 1.1rem;
