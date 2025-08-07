@@ -1,6 +1,6 @@
 Hi! Welcome to my page 👋
 
 - My name is Xiaoyi (Showry) Peng
-- Studying Env Health @JHU 
-- Interested in Env Health, Sustainability and AI
+- Studying Env Health and Engineering @JHU 
+- Interested in environmental sustainability, public health and AI
 - Love cyling, running, photography and freediving
